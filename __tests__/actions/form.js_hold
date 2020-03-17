@@ -8,7 +8,7 @@
 
 import { timeoutPromise } from '../test-utils'
 
-import { formChanged } from '../../lib/actions/form'
+import { formChanged } from '../../src/actions/form'
 
 describe('actions > api > form', () => {
   it('should debounce numerous requests to plan a trip', async () => {
