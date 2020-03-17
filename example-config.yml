@@ -25,8 +25,9 @@ persistence:
   strategy: localStorage
 
 map:
-  initLat: 45.52
-  initLon: -122.682
+  initLat: 37.8056
+  initLon: -122.2686  
+  fixInterStopGeometry: true
   baseLayers:
     - name: Streets
       url: //cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png
@@ -34,7 +35,7 @@ map:
       attribution: 'Map tiles: &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>, &copy; <a href="https://carto.com/attributions">CARTO</a>'
       maxZoom: 20
       hasRetinaSupport: true
-    - name: Stamen Toner Lite
+    - name: Stamen Toner Lite     
       url: http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png
       attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
 
@@ -42,14 +43,35 @@ map:
 # GPS coordinates will be used when finding the origin/destination.
 
 # example config for a Pelias geocoder (https://pelias.io/)
+#geocoder:
+#  apiKey: MAPZEN_KEY
+#  boundary:
+#    rect:
+#      minLon: -123.2034
+#      maxLon: -122.135
+#      minLat: 45.273
+#      maxLat: 45.7445
+#  focusPoint:
+#    lat: 45.5223452
+#    lon: -122.6821804
+#  # Custom fetch options to pass to geocoder resource.
+#  # options:
+#  #   headers:
+#  #     x-custom-header: abc123
+#  # required geocoder type.
+#  type: PELIAS
+#  # This base URL is required as the libraries will default to using now-defunct
+#  # mapzen urls
+#  baseUrl: https://geocoder.example.com/pelias/v1
+
 geocoder:
   apiKey: MAPZEN_KEY
   boundary:
     rect:
-      minLon: -123.2034
-      maxLon: -122.135
-      minLat: 45.273
-      maxLat: 45.7445
+      minLon: -123.2000
+      maxLon: -121.0000
+      minLat: 37.2445
+      maxLat: 38.5026
   focusPoint:
     lat: 45.5223452
     lon: -122.6821804
@@ -62,6 +84,28 @@ geocoder:
   # This base URL is required as the libraries will default to using now-defunct
   # mapzen urls
   baseUrl: https://geocoder.example.com/pelias/v1
+
+# geocoder:
+#  apiKey: ''
+#  boundary:
+#    rect:
+#      minLon: -123.2000
+#      maxLon: -121.0000
+#      minLat: 37.2445
+#      maxLat: 38.5026
+#  focusPoint:
+#    lat: 37.8056
+#    lon: -122.2686
+#  # Custom fetch options to pass to geocoder resource.
+#  # options:
+#  #   headers:
+#  #     x-custom-header: abc123
+#  # required geocoder type.
+#  type: NOMINATIM
+#  # This base URL is required as the libraries will default to using now-defunct
+#  # mapzen urls
+#  baseUrl: https://tptest.actransit.org/geo
+
 
 # example config for an ArcGIS geocoder
 # (https://developers.arcgis.com/rest/geocode/api-reference/overview-world-geocoding-service.htm)
@@ -93,6 +137,8 @@ modes:
       label: WES
     - mode: GONDOLA
       label: Aerial Tram
+    - mode: FERRY
+      label: Ferry
 
   accessModes:
     - mode: BICYCLE
@@ -118,3 +164,11 @@ routingTypes:
 #     modes:
 #       - WALK
 #       - BICYCLE
+
+
+dateTime:
+  timeFormat: h:mma
+
+plan:
+  # Maximum number of iterations to show. 0 = show all.
+  maxNumberOfIterations: 5

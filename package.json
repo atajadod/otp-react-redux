@@ -28,7 +28,7 @@
   "homepage": "https://github.com/opentripplanner/otp-react-redux#readme",
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.2",
-    "@conveyal/lonlat": "^1.1.0",
+    "@conveyal/lonlat": "^1.1.0", 
     "@mapbox/polyline": "^0.2.0",
     "bootstrap": "^3.3.7",
     "bowser": "^1.9.3",

@@ -15,6 +15,7 @@ import { Navbar, Grid, Row, Col } from 'react-bootstrap'
 
 // import OTP-RR components
 import {
+  DefaultMainPanel,
   DefaultSearchForm,
   ErrorMessage,
   MobileMain,
@@ -74,20 +75,21 @@ class OtpRRExample extends Component {
               <div style={{ float: 'left', color: 'white', fontSize: 28 }}>
                 <AppMenu />
               </div>
-              <div className='navbar-title' style={{ marginLeft: 50 }}>OpenTripPlanner</div>
+              <div className='navbar-title' style={{ marginLeft: 50 }}>AC Transit Trip Planner</div>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
         <Grid>
           <Row className='main-row'>
             <Col sm={6} md={4} className='sidebar'>
-              <ViewerContainer>
+              <DefaultMainPanel />
+              {/* <ViewerContainer>                
                 <DefaultSearchForm />
                 <ErrorMessage />
                 <div className='desktop-narrative-container'>
                   <NarrativeRoutingResults />
                 </div>
-              </ViewerContainer>
+              </ViewerContainer> */}
             </Col>
 
             <Col sm={6} md={8} className='map-container'>
@@ -100,7 +102,7 @@ class OtpRRExample extends Component {
 
     /** mobile view **/
     const mobileView = (
-      <MobileMain map={(<Map />)} title={(<div className='navbar-title'>OpenTripPlanner</div>)} />
+      <MobileMain map={(<Map />)} title={(<div className='navbar-title'>ACT Planner</div>)} />
     )
 
     /** the main webapp **/

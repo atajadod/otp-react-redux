@@ -1,6 +1,8 @@
 .otp .navbar {
   border-radius: 0;
-  background-color: #444;
+  /* background-color: #444; */
+  background-color: #719;
+
 }
 
 .otp .navbar .container {
@@ -41,3 +43,11 @@
   margin: 0px;
   padding: 0px;
 }
+
+.plan-trip-button:not([disabled]){
+  background-color: green;
+  color:white
+}
+/* .plan-trip-button:disabled .plan-trip-button:disabled:hover{
+  background-color: gray;
+} */

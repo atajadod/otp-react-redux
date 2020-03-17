@@ -133,7 +133,8 @@
   height: 40px;
   left: 0;
   right: 0;
-  background-color: #444;
+  /* background-color: #444; */
+  background-color: #719;
   color: #fff;
   text-align: center;
   font-size: 20px;
