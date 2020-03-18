@@ -23,7 +23,8 @@ module.exports = async env => {
     entry: [
       'babel-polyfill',
       './example.js',
-      './example.css'
+      './example.css',
+      './index.css'
     ],
     module: {
       rules: [
@@ -40,7 +41,7 @@ module.exports = async env => {
           test: /\.(sc|c)ss$/,
           use: [
             'css-hot-loader',
-            MiniCssExtractPlugin.loader,
+            MiniCssExtractPlugin.loader,            
             'css-loader',
             'sass-loader'
           ]
@@ -52,7 +53,30 @@ module.exports = async env => {
               loader: 'file-loader',
             },
           ],
-        },        
+        },
+        {
+          test: /\.(ttf|eot|svg|png|woff(2)?)(\?[a-z0-9]+)?$/,
+          use: [{
+            loader: 'file-loader', options: {esModule: false}
+          }]
+        }        
+        // { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=999000&mimetype=application/font-woff" },
+        // { test: /\.eot?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=999000&mimetype=application/font-woff" },
+        // { test: /\.ttf?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=999000&mimetype=application/font-woff" },
+        // { test: /\.(svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+        // { test: /\.(ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+        // {
+        //   test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        //   use: [
+        //     {
+        //       loader: 'file-loader',
+        //       options: {
+        //         name: '[name].[ext]',
+        //         outputPath: 'fonts/'
+        //       }
+        //     }
+        //   ]
+        // }                
       ]
     },
     resolve: {
@@ -89,3 +113,10 @@ module.exports = async env => {
     }
   }
 }
+// Encore.disableFontsLoader()
+//   .addLoader(  {
+//     test: /\.(ttf|eot|svg|png|woff(2)?)(\?[a-z0-9]+)?$/,
+//     use: [{
+//       loader: 'file-loader', options: {esModule: false}
+//     }]
+//   })
