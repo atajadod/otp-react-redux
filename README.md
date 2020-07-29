@@ -19,6 +19,16 @@ yarn install
 yarn start
 ```
 
+To build run the below command:
+```bash
+yarn build
+```
+
+the you can publish it by copying the files, something like this:
+```bash
+cd ./dist
+scp * username@server:/var/www/html/otp/  
+```
 ## Library Documentation
 
 Coming Soon
