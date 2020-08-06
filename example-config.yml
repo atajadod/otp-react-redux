@@ -27,7 +27,7 @@ persistence:
 map:
   initLat: 37.8056
   initLon: -122.2686  
-  fixInterStopGeometry: true
+  fixInterStopGeometry: false  # Older OTP has some issues with drawinf the line, it is fixed in the new one, so this should be false in the newer OTP version.
   baseLayers:
     - name: Streets
       url: //cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png
