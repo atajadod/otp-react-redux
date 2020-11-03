@@ -32,3 +32,8 @@ scp * username@server:/var/www/html/otp/
 ## Library Documentation
 
 Coming Soon
+
+
+
+## We might be able to change the Leaflet tyle with vector tyle following this:
+https://stackoverflow.com/questions/42765309/render-mapbox-vector-tiles-inside-react-leaflet
