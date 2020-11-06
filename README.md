@@ -29,6 +29,27 @@ the you can publish it by copying the files, something like this:
 cd ./dist
 scp * username@server:/var/www/html/otp/  
 ```
+
+
+## How To fix the spikes in the lines:
+In node_modules, go to transit-js, under build/display
+add the line below to drawPath function in canvas-display.js
+```
+this.ctx.lineJoin = attrs['lineJoin'] || 'miter';  
+```
+then goto build/renderer\renderedsegment.js, in the render function change the display.drawPath to be like this
+```
+  display.drawPath(this.renderData, {
+        fill: 'none',
+        stroke: styler.compute2('segments', 'stroke', this),
+        'stroke-width': styler.compute2('segments', 'stroke-width', this),
+        'stroke-dasharray': styler.compute2('segments', 'stroke-dasharray', this),
+        'stroke-linecap': styler.compute2('segments', 'stroke-linecap', this),
+        'lineJoin':'round',  //This is new
+      });
+```
+
+
 ## Library Documentation
 
 Coming Soon

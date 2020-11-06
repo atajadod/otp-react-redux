@@ -55,7 +55,7 @@ module.exports = async env => {
           ],
         },
         {
-          test: /\.(ttf|eot|svg|png|woff(2)?)(\?[a-z0-9]+)?$/,
+          test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
           use: [{
             loader: 'file-loader', options: {esModule: false}
           }]

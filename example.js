@@ -9,6 +9,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
+import actlogo from './images/actlogo.png'
 
 // import Bootstrap Grid components for layout
 import { Navbar, Grid, Row, Col } from 'react-bootstrap'
@@ -75,7 +76,10 @@ class OtpRRExample extends Component {
               <div style={{ float: 'left', color: 'white', fontSize: 28 }}>
                 <AppMenu />
               </div>
-              <div className='navbar-title' style={{ marginLeft: 50 }}>ACT Trip Planner</div>
+              <div className='navbar-title' style={{ marginLeft: 50, paddingTop:0, marginTop:'-4px' }}>
+                <img src={actlogo} alt="logo" style={{marginRight:'10px'}} />
+                Trip Planner
+              </div>
             </Navbar.Brand>
           </Navbar.Header>
         </Navbar>
@@ -102,7 +106,10 @@ class OtpRRExample extends Component {
 
     /** mobile view **/
     const mobileView = (
-      <MobileMain map={(<Map />)} title={(<div className='navbar-title'>ACT Planner</div>)} />
+      <MobileMain map={(<Map />)} title={(
+        <div className='navbar-title' style={{marginTop:'-5px'}} >
+          <img src={actlogo} alt="logo" style={{marginRight:'10px'}} />
+        </div>)} />
     )
 
     /** the main webapp **/
