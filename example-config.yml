@@ -172,3 +172,5 @@ dateTime:
 plan:
   # Maximum number of iterations to show. 0 = show all.
   maxNumberOfIterations: 5
+  # If it is not empty, the first result with a leg having this company name will be shown first. 
+  preferredAgency: AC TRANSIT
