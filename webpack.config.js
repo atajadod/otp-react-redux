@@ -85,15 +85,19 @@ module.exports = async env => {
     output: {
       path: path.join(__dirname, '/dist'),
       publicPath: '',
-      filename: 'bundle.js'
+      filename: 'bundle.js',
+      filename: 'tp.[name].[contenthash].js',
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: 'public/index.html',
         inject: 'body',
-        filename: 'index.html'
+        filename: 'index.html',
+        title: 'Caching'
       }),
-      new MiniCssExtractPlugin(),
+      new MiniCssExtractPlugin({
+        filename: 'tp.[name].[contenthash].css',
+      }),
       new webpack.DefinePlugin({
         // Optionally override the default config file location with some other
         // file.
