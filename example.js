@@ -84,32 +84,37 @@ class OtpRRExample extends Component {
           </Navbar.Header>
         </Navbar>
         <Grid>
-          <Row className='main-row'>
-            <Col sm={6} md={4} className='sidebar'>
-              <DefaultMainPanel />
-              {/* <ViewerContainer>                
-                <DefaultSearchForm />
-                <ErrorMessage />
-                <div className='desktop-narrative-container'>
-                  <NarrativeRoutingResults />
-                </div>
-              </ViewerContainer> */}
-            </Col>
+          <main>
+            <Row className='main-row'>
+              <Col sm={6} md={4} className='sidebar'>
+                <DefaultMainPanel />
+                {/* <ViewerContainer>                
+                  <DefaultSearchForm />
+                  <ErrorMessage />
+                  <div className='desktop-narrative-container'>
+                    <NarrativeRoutingResults />
+                  </div>
+                </ViewerContainer> */}
+              </Col>
 
-            <Col sm={6} md={8} className='map-container'>
-              <Map />
-            </Col>
-          </Row>
+              <Col sm={6} md={8} className='map-container'>
+                <Map />
+              </Col>
+            </Row>
+          </main>
+
         </Grid>
       </div>
     )
 
     /** mobile view **/
     const mobileView = (
-      <MobileMain map={(<Map />)} title={(
-        <div className='navbar-title' style={{marginTop:'-5px'}} >
-          <img src={actlogo} alt="logo" style={{marginRight:'10px'}} />
-        </div>)} />
+      <main>
+        <MobileMain map={(<Map />)} title={(
+          <div className='navbar-title' style={{marginTop:'-5px'}} >
+            <img src={actlogo} alt="logo" style={{marginRight:'10px'}} />
+          </div>)} />
+      </main>
     )
 
     /** the main webapp **/
