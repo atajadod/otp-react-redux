@@ -39,6 +39,38 @@ map:
       url: http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png
       attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>.'
 
+ overlays:
+    # - type: bike-rental
+    #   name: Biketown Locations
+    #   modes:
+    #     - BICYCLE_RENT
+    #   mapSymbols:
+    #     - maxZoom: 13
+    #       minZoom: 0
+    #       type: circle
+    #       pixels: 2
+    #       fillColor: "#FF2E28"
+    #       dockStrokeColor: "#000000"
+    #     - maxZoom: 17
+    #       minZoom: 15
+    #       type: circle
+    #       pixels: 6
+    #       fillColor: "#FF2E28"
+    #       dockStrokeColor: "#000000"
+    #     - maxZoom: 999
+    #       minZoom: 18
+    #       type: hubAndFloatingBike
+
+    - type: stops
+      name: Transit Stops
+      visible: true
+      icons:  # not supported yet!
+        - agencyId: BA  
+          file: "./images/bart.png"
+          url: ""
+          width: 16
+          height: 16
+
 # it is possible to leave out a geocoder config entirely. In that case only
 # GPS coordinates will be used when finding the origin/destination.
 
