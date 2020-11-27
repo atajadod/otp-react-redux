@@ -20,12 +20,24 @@ module.exports = async env => {
     await fs.copy(env.JS_CONFIG, `./tmp/${splitPath[splitPath.length - 1]}`)
   }
   return {
-    entry: [
-      'babel-polyfill',
-      './example.js',
-      './example.css',
-      './index.css'
-    ],
+    // entry: {      
+    //   'map-d3-redux':['d3-selection','d3-zoom','leaflet','leaflet.polylinemeasure','mapbox-gl','mapbox-gl-leaflet'],
+    //   'react-vendors': {
+    //     import: ['react', 'react-dom','react-fontawesome','react-bootstrap','react-router','prop-types'],
+    //     dependOn: ['map-d3-redux']
+    //   },
+    //   'redux-vendors': {
+    //     import: ['redux','react-redux','redux-actions','redux-logger','redux-thunk'],
+    //     dependOn: ['react-vendors']
+    //   },      
+    //   main: {
+    //     import: ['babel-polyfill','./example.js','./example.css','./index.css'],
+    //     dependOn: ['redux-vendors']
+    //   },
+    // },
+    entry: [      
+      'babel-polyfill','./example.js','./example.css','./index.css'
+    ],    
     module: {
       rules: [
         {
@@ -35,7 +47,7 @@ module.exports = async env => {
         },
         {
           test: /\.(yml|yaml)$/,
-          loader: ['json-loader', 'yaml-loader']
+          use: ['json-loader', 'yaml-loader']
         },
         {
           test: /\.(sc|c)ss$/,
@@ -87,6 +99,7 @@ module.exports = async env => {
       publicPath: '',
       filename: 'bundle.js',
       filename: 'tp.[name].[contenthash].js',
+      //filename: 'tp.[name].[hash].js',
     },
     plugins: [
       new HtmlWebpackPlugin({
@@ -106,14 +119,21 @@ module.exports = async env => {
       })
     ],
     optimization: {
+      splitChunks: {
+        chunks: 'all', 
+      },
       minimizer: [
         new UglifyJsPlugin({}),
         new OptimizeCSSAssetsPlugin({})
       ]
     },
     devServer: {
+      hot: true,
+      watchContentBase: true,
+      disableHostCheck: true,
       contentBase: './',
-      historyApiFallback: true
+      historyApiFallback: true,
+      
     }
   }
 }

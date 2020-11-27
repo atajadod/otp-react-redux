@@ -5,7 +5,8 @@
   "scripts": {
     "build": "webpack --mode=production",
     "prestart": "yarn",
-    "start": "webpack-dev-server --hot --mode=development --host 0.0.0.0 --disableHostCheck=true",
+    "fix":"powershell -file fix.ps1 ",
+    "start": "powershell -file fix.ps1 && webpack serve --mode=development --host 0.0.0.0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "standard": {
@@ -94,12 +95,12 @@
     "es6-math": "^1.0.0",
     "file-loader": "^6.0.0",
     "fs-extra": "^8.1.0",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^4.5.0",
     "lodash.clonedeep": "^4.5.0",
     "mini-css-extract-plugin": "^0.4.1",
     "nock": "^9.0.9",
     "node-sass": "^4.9.2",
-    "optimize-css-assets-webpack-plugin": "^5.0.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-hot-loader": "React 16.9",
@@ -108,11 +109,11 @@
     "semantic-release": "^15.13.12",
     "style-loader": "^0.22.0",
     "ttf-loader": "^1.0.2",
-    "uglifyjs-webpack-plugin": "^1.2.7",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.0.0",
-    "webpack": "4.16.5",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.11",
+    "webpack": "5.8.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0",
     "yaml-loader": "^0.5.0"
   },
   "peerDependencies": {
