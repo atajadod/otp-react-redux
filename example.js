@@ -76,7 +76,7 @@ class OtpRRExample extends Component {
               <div style={{ float: 'left', color: 'white', fontSize: 28 }}>
                 <AppMenu />
               </div>
-              <div className='navbar-title' style={{ marginLeft: 50, paddingTop:0, marginTop:'-4px' }}>
+              <div className='navbar-title' style={{ marginLeft: 50, paddingTop:0 }}>
                 <img src={actlogo} alt="logo" style={{marginRight:'10px'}} />
                 Trip Planner
               </div>
