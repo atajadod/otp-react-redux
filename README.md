@@ -50,6 +50,16 @@ then goto build/renderer\renderedsegment.js, in the render function change the d
 ```
 
 
+## How To publish
+```shell
+cd /d p:\github\opt-react-redux
+yarn build
+cd dist
+ssh -i p:\servers\ssh-key acadmin@drwebtest08a "cd /var/www/html/otp/ && rm *"
+scp -i p:\servers\ssh-key acadmin@drwebtest08a * acadmin@drwebtest08a:/var/www/html/otp/
+
+```
+
 ## Library Documentation
 
 Coming Soon
