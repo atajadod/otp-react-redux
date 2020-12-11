@@ -206,3 +206,7 @@ plan:
   maxNumberOfIterations: 5
   # If it is not empty, the first result with a leg having this company name will be shown first. 
   preferredAgency: AC TRANSIT
+  # The number of the times it should manipulate the result to bring the preferedAgency first!
+  preferredAgencyCount: 2
+  #this numbe will be added to the query sent to OTP engin.
+  numItineraries: 12
