@@ -54,11 +54,24 @@ then goto build/renderer\renderedsegment.js, in the render function change the d
 ```shell
 cd /d p:\github\opt-react-redux
 yarn build
+cp .\favicon.ico .\dist\
 cd dist
 ssh -i p:\servers\ssh-key acadmin@drwebtest08a "cd /var/www/html/otp/ && rm *"
 scp -i p:\servers\ssh-key acadmin@drwebtest08a * acadmin@drwebtest08a:/var/www/html/otp/
 
 ```
+in production
+```
+cd /d p:\github\opt-react-redux
+yarn build
+cp .\favicon.ico .\dist\
+cd dist
+ssh -i p:\servers\ssh-key acadmin@64.150.187.21 "cd /var/www/html/otp/ && rm *"
+scp -i p:\servers\ssh-key * acadmin@64.150.187.21:/var/www/html/otp/
+ssh -i p:\servers\ssh-key acadmin@64.150.187.183 "cd /var/www/html/otp/ && rm *"
+scp -i p:\servers\ssh-key * acadmin@64.150.187.183:/var/www/html/otp/
+```
+
 
 ## Library Documentation
 
