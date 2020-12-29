@@ -63,6 +63,7 @@ scp -i p:\servers\ssh-key acadmin@drwebtest08a * acadmin@drwebtest08a:/var/www/h
 in production
 ```
 cd /d p:\github\opt-react-redux
+rm .\dist\*
 yarn build
 cp .\favicon.ico .\dist\
 cd dist
