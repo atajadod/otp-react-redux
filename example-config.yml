@@ -197,6 +197,7 @@ routingTypes:
 #       - WALK
 #       - BICYCLE
 
+homeTimezone: 'America/Los_Angeles'
 
 dateTime:
   timeFormat: h:mma
