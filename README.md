@@ -53,11 +53,12 @@ then goto build/renderer\renderedsegment.js, in the render function change the d
 ## How To publish
 ```shell
 cd /d p:\github\opt-react-redux
+rm .\dist\*
 yarn build
 cp .\favicon.ico .\dist\
 cd dist
-ssh -i p:\servers\ssh-key acadmin@drwebtest08a "cd /var/www/html/otp/ && rm *"
-scp -i p:\servers\ssh-key acadmin@drwebtest08a * acadmin@drwebtest08a:/var/www/html/otp/
+ssh -i [ssh-key] [server] "cd /var/www/html/otp/ && rm *"
+scp -i [ssh-key] [server] * acadmin@drwebtest08a:/var/www/html/otp/
 
 ```
 in production
@@ -67,10 +68,10 @@ rm .\dist\*
 yarn build
 cp .\favicon.ico .\dist\
 cd dist
-ssh -i p:\servers\ssh-key acadmin@64.150.187.21 "cd /var/www/html/otp/ && rm *"
-scp -i p:\servers\ssh-key * acadmin@64.150.187.21:/var/www/html/otp/
-ssh -i p:\servers\ssh-key acadmin@64.150.187.183 "cd /var/www/html/otp/ && rm *"
-scp -i p:\servers\ssh-key * acadmin@64.150.187.183:/var/www/html/otp/
+ssh -i your [ssh-key] [server] "cd /var/www/html/otp/ && rm *"
+scp -i your [ssh-key] * [server]:/var/www/html/otp/
+ssh -i your [ssh-key] [server] "cd /var/www/html/otp/ && rm *"
+scp -i your [ssh-key] * [server]:/var/www/html/otp/
 ```
 
 
